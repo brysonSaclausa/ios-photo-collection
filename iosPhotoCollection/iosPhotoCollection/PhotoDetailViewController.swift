@@ -10,11 +10,48 @@ import UIKit
 
 class PhotoDetailViewController: UIViewController {
 
+    var photoController: PhotoController?
+    var photo: Photo?
+    var themeHelper: ThemeHelper?
+    
+    
+    @IBOutlet weak var selectedImageView: UIImageView!
+    @IBOutlet weak var addAMovieTextField: UITextField!
+    @IBAction func addPhoto(_ sender: Any) {
+    }
+    @IBAction func savePhoto(_ sender: Any) {
+    }
+    
+     func setTheme() {
+           guard let currentTheme = themeHelper?.themePreference else { return }
+           if currentTheme == "Dark" {
+               view.backgroundColor = UIColor(named: "Dark")
+           } else {
+            view.backgroundColor = UIColor(named: "Light2")
+           }
+       
+       }
+    
+    func updateViews() {
+    setTheme()
+    guard let photo = photo else { return }
+    selectedImageView.image = UIImage(data: photo.imageData)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    updateViews()
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        themeHelper?.setTheme(viewController: self)
+    }
+
     
 
     /*

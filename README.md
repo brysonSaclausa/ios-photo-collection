@@ -24,7 +24,7 @@ Please look at the screen recording below to know what the finished project shou
 Please fork and clone this repository. This repository does not have an Xcode starter project, so you will need to create one inside of the cloned repository folder before you begin. Remember to regularly commit and push your code to Github.
 
 ### Part 1 - Model Layer Set Up
-
+ 
 #### Photo
 
 1. Create a swift file called "Photo.swift". 

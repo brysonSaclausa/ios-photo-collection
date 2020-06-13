@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class PhotoController {
+    
+    var photos: [Photo] = []
+    
+    func Create(photo: Photo) {
+        photos.append(photo)
+    }
+    
+    func Update(photo: Photo, imagedate: Data, title: String ) {
+        }
+    
+
+
+
+}
